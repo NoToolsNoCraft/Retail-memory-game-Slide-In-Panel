@@ -1,0 +1,311 @@
+
+
+.container {
+    
+    width: 80%;
+    max-width: 60vh;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 24px;
+    text-align: center;
+}
+
+.logo {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+/* Dashboard */
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 16px;
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.dashboard-element {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #222;
+    gap: 6px;
+}
+
+.dashboard-icon {
+    color: #bfa67a; /* L'Oréal gold tone */
+    font-size: 18px;
+    opacity: 0.8;
+    transition: transform 0.2s ease;
+}
+
+.dashboard-icon:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Stars */
+#stars {
+    margin: 16px 0;
+}
+
+#stars .fas {
+    color: #bfa67a;
+    font-size: 20px;
+    margin: 0 4px;
+    opacity: 0.9;
+}
+
+/* Form (difficulty selector) */
+#form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    gap: 8px;
+}
+
+#form input[type="radio"] {
+    display: none;
+}
+
+#form label {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+    color: #555;
+}
+
+#form label.checked,
+#form label.active-difficulty {
+    background-color: #bfa67a;
+    color: #fff;
+    border-color: #bfa67a;
+}
+
+/* Game Board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+    margin-top: 16px;
+}
+
+.card-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 aspect ratio */
+    perspective: 1000px;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    transition: transform 0.6s;
+    backface-visibility: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.front {
+    background-color: #eaeaea;
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: #fff;
+}
+
+.front-open {
+    transform: rotateY(180deg);
+}
+
+.back-open {
+    transform: rotateY(0deg);
+}
+
+.front-correct,
+.back-correct {
+    border: 2px solid #bfa67a;
+    box-shadow: 0 0 10px #bfa67a;
+}
+
+/* Card image */
+.icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal.hide {
+    display: none;
+}
+
+.modal-inner {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+.modal-inner h3 {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.modal-text {
+    font-size: 16px;
+    color: #444;
+    margin: 6px 0;
+}
+
+#replay {
+    cursor: pointer;
+    color: #bfa67a;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 16px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+#replay:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+#copyResultsButton {
+    margin-top: 12px;
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #bfa67a;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#copyResultsButton:hover {
+    background-color: #a08a5f;
+}
+
+/* Share Buttons */
+.share-buttons {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.share-buttons p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.share-btn {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.fb { background-color: #3b5998; }
+.wa { background-color: #25D366; }
+.vb { background-color: #665CAC; }
+.tg { background-color: #0088cc; }
+
+.share-btn:hover {
+    opacity: 0.85;
+}
+
+
+/* Promo Section */
+.promo-section {
+    margin: 16px 0;
+}
+
+.promo-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+    }
+
+    .dashboard {
+        flex-direction: grid;
+        gap: 8px;
+    }
+
+    .container {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-board {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #form {
+        flex-direction: column;
+        gap: 6px;
+    }
+}

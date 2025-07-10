@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuxuryGlow - Premium Skin Serum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@headlessui/react@latest/dist/headlessui.umd.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sV6TZzUu+Uo6KUpR37Fz6NqDh+n1EsATul4v8htXKgkm8nDz4FrT2nKCSExG1N9n+K9V71sG9XQO54oQuU/sLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="public/css/all.min.css" />
+  <style>
+    /* Slide-in panel styles */
+    #memoryGamePanel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 350px;
+      max-width: 90vw;
+      background-color: #fce7f3; /* bg-pink-100 */
+      box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    #memoryGamePanel.open {
+      transform: translateX(0);
+    }
+    #memoryGamePanel .close-btn {
+      align-self: flex-end;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #6b7280; /* text-gray-500 */
+      transition: color 0.2s;
+    }
+    #memoryGamePanel .close-btn:hover {
+      color: #000;
+    }
+
+    /* Sticky button styles */
+    #openGameButton {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background-color: #db2777; /* bg-pink-600 */
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      padding: 0.75rem 1.25rem;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(219, 39, 119, 0.5);
+      cursor: pointer;
+      z-index: 1100;
+      transition: background-color 0.2s;
+      user-select: none;
+    }
+    #openGameButton:hover {
+      background-color: #be185d; /* bg-pink-700 */
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-pink-100 via-rose-50 to-yellow-50 p-8 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl font-bold text-pink-700 mb-4">LuxuryGlow</h1>
+      <p class="text-xl text-gray-700 mb-6">Reveal your natural radiance with our best-selling premium skin serum</p>
+      <img
+        src="https://cdn.shopify.com/s/files/1/0009/4260/4340/files/LUXE_SERUM_banner_fa2_1024x1024.jpg?v=1679935799"
+        alt="LuxuryGlow Skin Serum Bottle"
+        class="mx-auto rounded-xl shadow-lg mb-6"
+      />
+
+      <a href="#buy" class="inline-block bg-pink-600 text-white px-6 py-3 rounded-full text-lg shadow hover:bg-pink-700 transition">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+      <div>
+        <img src="https://img.icons8.com/color/96/natural-food.png" class="mx-auto mb-4" />
+        <h3 class="text-xl font-semibold">All-Natural</h3>
+        <p>Free from harsh chemicals. Gentle on your skin.</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/color/96/visible--v1.png" class="mx-auto mb-4" />
+        <h3 class="text-xl font-semibold">Visible Results</h3>
+        <p>Noticeably improved glow in just 2 weeks.</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/color/96/warranty-card.png" class="mx-auto mb-4" />
+        <h3 class="text-xl font-semibold">Satisfaction Guaranteed</h3>
+        <p>30-day money-back guarantee if you're not in love.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-rose-50 py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-pink-700 mb-8">What Our Customers Say</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow">
+          <p class="italic">“I’ve tried dozens of serums, but this one is a game changer. My skin is glowing!”</p>
+          <p class="mt-4 font-semibold text-sm">– Ana M., Novi Sad</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow">
+          <p class="italic">“I noticed improvements within a week. I love the clean ingredients!”</p>
+          <p class="mt-4 font-semibold text-sm">– Jelena S., Belgrade</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buy Now Section -->
+  <section id="buy" class="py-16 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-4">Order Your LuxuryGlow Serum</h2>
+    <p class="mb-6 text-lg text-gray-700">Only 2,490 RSD · Free Shipping</p>
+    <button class="bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-full text-lg shadow transition">
+      Add to Cart
+    </button>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-rose-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="bg-white p-4 rounded shadow">
+          <summary class="cursor-pointer font-semibold">Is LuxuryGlow suitable for sensitive skin?</summary>
+          <p class="mt-2 text-gray-700">Yes, it's formulated with natural ingredients perfect for sensitive skin types.</p>
+        </details>
+        <details class="bg-white p-4 rounded shadow">
+          <summary class="cursor-pointer font-semibold">How long does shipping take?</summary>
+          <p class="mt-2 text-gray-700">1-3 business days within Serbia and Croatia.</p>
+        </details>
+        <details class="bg-white p-4 rounded shadow">
+          <summary class="cursor-pointer font-semibold">Can I return the product if I don't like it?</summary>
+          <p class="mt-2 text-gray-700">Of course! We offer a 30-day money-back guarantee.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <footer class="bg-gray-900 text-white py-8 text-center">
+    <h3 class="text-xl mb-2">Questions? Contact Us</h3>
+    <p class="text-sm">support@luxuryglow.rs · +381 65 123 456</p>
+    <p class="text-xs mt-4">&copy; 2025 LuxuryGlow. All rights reserved.</p>
+  </footer>
+
+  <!-- Sticky Button to Open Game -->
+  <button id="openGameButton" aria-label="Open Memory Game">Play the Memory Game 🎮</button>
+
+  <!-- Slide-in Memory Game Panel -->
+  <aside id="memoryGamePanel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="memoryGameTitle">
+    <button class="close-btn" aria-label="Close Memory Game">&times;</button>
+
+    <!-- Retail Memory Game -->
+    <div class="container w-full max-w-2xl mx-auto">
+
+     <!-- <h2 id="memoryGameTitle" class="text-xl font-bold mb-4 text-pink-700">Memory Game</h2>  -->
+
+      <div class="internal">
+        <img src="brand.webp" alt="Your Logo" class="logo mb-4" />
+
+        <div class="dashboard">
+          <div class="dashboard-element">
+            <i class="dashboard-icon fas fa-stopwatch"></i> <span id="timer"></span>
+          </div>
+          <div class="dashboard-element">
+            <i class="dashboard-icon fas fa-clone"></i> <span id="moves"></span>
+          </div>
+          <div class="dashboard-element">
+            <i id="reset" class="fas fa-redo-alt cursor-pointer" title="Restart Game"></i> <span></span>
+          </div>
+        </div>
+
+        <div id="stars" class="mb-2">
+          <i class="fas fa-star" id="rating-poor"></i>
+          <i class="fas fa-star" id="rating-average"></i>
+          <i class="fas fa-star" id="rating-perfect"></i>
+        </div>
+
+        <div id="form" class="mb-4">
+          <input type="radio" id="type1Mode" name="difficulty" value="type1" checked="checked" />
+          <label class="checked" for="type1Mode">WOMEN</label>
+
+          <input type="radio" id="type2Mode" name="difficulty" value="type2" />
+          <label for="type2Mode">MEN</label>
+
+          <input type="radio" id="type3Mode" name="difficulty" value="type3" />
+          <label for="type3Mode">KIDS</label>
+        </div>
+
+        <div class="game-board"></div>
+      </div>
+
+      <div class="modal hide mt-4">
+        <div class="modal-inner">
+          <div class="promo-section mb-4">
+            <a href="https://www.lorealparisusa.com/" target="_blank">
+              <img
+                src="https://raw.githubusercontent.com/NoToolsNoCraft/L-Oreal-Memory-Game-Widget/refs/heads/main/loreal%20promo.webp"
+                alt="Have you seen this? Try it out!"
+                class="promo-image"
+              />
+            </a>
+          </div>
+
+          <h3>Phenomenally done!</h3>
+          <p class="modal-text">You solved the game in <span id="final-time"></span> seconds and <span id="final-moves"></span> moves!</p>
+          <p class="modal-text" id="final-rating"></p>
+          <p class="modal-text" id="replay">
+            <i class="fas fa-redo-alt"></i> Wanna play again?
+          </p>
+          <button id="copyResultsButton">Copy the result and send it to your friend!</button>
+
+          <div class="share-buttons mt-4">
+            <p>Share the results with your friends:</p>
+            <a id="shareFacebook" class="share-btn fb" target="_blank">📘 Facebook</a>
+            <a id="shareWhatsApp" class="share-btn wa" target="_blank">📱 WhatsApp</a>
+            <a id="shareViber" class="share-btn vb" target="_blank">📩 Viber</a>
+            <a id="shareTelegram" class="share-btn tg" target="_blank">🚀 Telegram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="js/app.js" defer></script>
+
+  <script>
+ 
+
+    // Slide-in panel open/close logic
+    const openBtn = document.getElementById('openGameButton');
+    const panel = document.getElementById('memoryGamePanel');
+    const closeBtn = panel.querySelector('.close-btn');
+
+    openBtn.addEventListener('click', () => {
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+    });
+  </script>
+</body>
+</html>
