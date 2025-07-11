@@ -16,9 +16,9 @@
       top: 0;
       right: 0;
       height: 100vh;
-      width: 350px;
-      max-width: 90vw;
-      background-color: #fce7f3; /* bg-pink-100 */
+      width: 100%;
+      max-width: 550px;
+      background-color: #fce7f3;
       box-shadow: -4px 0 8px rgba(0,0,0,0.1);
       transform: translateX(100%);
       transition: transform 0.3s ease-in-out;
@@ -41,6 +41,8 @@
       color: #000;
     }
 
+    
+
     /* Sticky button styles */
     #openGameButton {
       position: fixed;
@@ -54,12 +56,45 @@
       font-weight: 600;
       box-shadow: 0 4px 6px rgba(219, 39, 119, 0.5);
       cursor: pointer;
-      z-index: 1100;
+      z-index: 100;
       transition: background-color 0.2s;
       user-select: none;
     }
     #openGameButton:hover {
       background-color: #be185d; /* bg-pink-700 */
+    }
+
+    /* Default width for PC (larger screens) */
+    #memoryGamePanel {
+      width: 550px;
+    }
+
+    /* Media query for laptop and mobile devices (screens up to 1024px, or your desired breakpoint) */
+    @media (max-width: 1024px) {
+      #memoryGamePanel {
+        width: 550px;
+      }
+    }
+
+    /* Adjust for very small mobile screens to prevent overflow if 550px is too wide */
+    @media (max-width: 576px) { /* Example breakpoint for smaller mobiles */
+        #memoryGamePanel {
+            width: 100%; /* Take full width on very small screens */
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 853px) {
+      #memoryGamePanel {
+            width: 100%; /* Take full width on medium screens */
+            max-width: 100vh; /* Take full width on very small screens */
+          }
+    }
+
+    @media (min-width: 853px) and (max-width: 911px) {
+      #memoryGamePanel {
+            width: 100%; /* Take full width on medium screens */
+            max-width: 100vh; /* Take full width on very small screens */
+          }
     }
   </style>
 </head>
@@ -154,6 +189,9 @@
     <p class="text-xs mt-4">&copy; 2025 LuxuryGlow. All rights reserved.</p>
   </footer>
 
+
+
+  
   <!-- Sticky Button to Open Game -->
   <button id="openGameButton" aria-label="Open Memory Game">Play the Memory Game 🎮</button>
 
@@ -162,7 +200,7 @@
     <button class="close-btn" aria-label="Close Memory Game">&times;</button>
 
     <!-- Retail Memory Game -->
-    <div class="container w-full max-w-2xl mx-auto">
+    <div class="container">
 
      <!-- <h2 id="memoryGameTitle" class="text-xl font-bold mb-4 text-pink-700">Memory Game</h2>  -->
 

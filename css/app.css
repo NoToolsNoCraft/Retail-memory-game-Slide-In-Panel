@@ -1,16 +1,19 @@
 
 
 .container {
-    
-    width: 80%;
-    max-width: 60vh;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    overflow: hidden;
-    padding: 24px;
-    text-align: center;
+  
+   /* Adjust for game size you want */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 24px;
+  text-align: center;
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 600px;
 }
+
 
 .logo {
   max-width: 100%;
@@ -309,3 +312,121 @@
         gap: 6px;
     }
 }
+
+@media (min-width: 340px) and (max-width: 349px) {
+  .container {
+    width: 90vw !important;
+  }
+}
+
+@media (min-width: 350px) and (max-width: 374px) {
+  .container {
+    width: 90vw !important;
+  }
+}
+@media (min-width: 375px) and (max-width: 389px) {
+  .container {
+    width: 75vw !important;
+  }
+}
+
+@media (min-width: 390px) and (max-width: 415px) {
+  .container {
+    width: 90vw !important;
+  }
+}
+
+@media (min-width: 416px) and (max-width: 450px) {
+  .container {
+    width: 90vw !important;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 539px) {
+  .container {
+    width: 80vw;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 600px) {
+  .container {
+    width: 74vw !important;
+    
+  }
+}
+
+@media (min-width: 768px) and (max-width: 853px) {
+  .container {
+    width: 100vw !important;
+    
+  }
+}
+
+@media (min-width: 853px) and (max-width: 911px) {
+  .container {
+    width: 100vw !important;
+    
+  }
+}
+
+/* Small Desktop / Entry-level Laptops */
+@media (min-width: 912px) and (max-width: 1023px) {
+  .container {
+    width: 50vw !important;
+  }
+}
+
+/* Small Desktop / Entry-level Laptops */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .container {
+    width: 30vw !important;
+  }
+}
+
+/* Medium Laptops (e.g., 13"–14") */
+@media (min-width: 1201px) and (max-width: 1365px) {
+  .container {
+    width: 34vw !important;
+  }
+}
+
+/* Standard 1366x768 Screens */
+@media (min-width: 1366px) and (max-width: 1400px) {
+  .container {
+    width: 32vw !important;
+  }
+}
+
+/* MacBook Pro 13" / WQHD Laptops */
+@media (min-width: 1401px) and (max-width: 1600px) {
+  .container {
+    width: 28vw !important;
+  }
+}
+
+/* Full HD Desktops (1920x1080) */
+@media (min-width: 1601px) and (max-width: 1857px) {
+  .container {
+    width: 24vw !important;
+  }
+}
+
+/* 2K & Retina Displays (2560px and up) */
+@media (min-width: 1858px) and (max-width: 2560px) {
+  .container {
+    width: 23vw !important;
+  }
+}
+
+/* Ultra-Wide Monitors (3440px and up) */
+@media (min-width: 2561px) {
+  .container {
+    width: 18vw !important;
+  }
+}
+
+
+
+
+
