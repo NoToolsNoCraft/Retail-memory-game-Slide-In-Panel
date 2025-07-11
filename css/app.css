@@ -394,7 +394,7 @@
 /* Standard 1366x768 Screens */
 @media (min-width: 1366px) and (max-width: 1400px) {
   .container {
-    width: 54vw !important;
+    width: 25vw !important;
   }
 }
 
